@@ -310,6 +310,16 @@ a {
   box-shadow: none;
 }
 
+.article-card__link-wrap {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-card__link-wrap:hover .article-card__title {
+  color: var(--color-primary-green);
+}
+
 .article-card__media {
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -347,6 +357,112 @@ a {
 
 .article-card__link:hover {
   color: var(--color-primary-green);
+}
+
+.page-header {
+  padding-block: 2rem 1rem;
+}
+
+.page-header__title {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: var(--font-weight-light);
+  color: var(--color-primary-blue);
+}
+
+.page-header__lead {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-neutral-gray-600);
+}
+
+.article-detail {
+  padding-block: 2rem 4rem;
+}
+
+.article-detail__header {
+  margin-bottom: 2rem;
+}
+
+.article-detail__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--color-neutral-gray-100);
+  margin-bottom: 1.5rem;
+}
+
+.article-detail__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-detail__author {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-neutral-gray-600);
+}
+
+.article-detail__title {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: var(--font-weight-light);
+  line-height: 1.2;
+  color: var(--color-primary-blue);
+}
+
+.article-detail__excerpt {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-primary-blue);
+}
+
+.article-detail__content {
+  margin-bottom: 2rem;
+}
+
+.article-detail__back {
+  margin: 0;
+}
+
+.article-detail__back-link {
+  color: var(--color-primary-cyan);
+  text-decoration: none;
+}
+
+.article-detail__back-link:hover {
+  text-decoration: underline;
+}
+
+.empty-state {
+  padding-block: 4rem;
+  text-align: center;
+}
+
+.empty-state h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-primary-blue);
+}
+
+.empty-state p {
+  margin: 0 0 1rem;
+  color: var(--color-neutral-gray-600);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .article-card__excerpt {

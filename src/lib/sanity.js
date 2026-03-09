@@ -33,3 +33,11 @@ export const articlesQuery = `*[_type == "article"] | order(order asc){
   "imageUrl": image.asset->url,
   "slug": slug.current
 }`
+
+export const articleBySlugQuery = `*[_type == "article" && slug.current == $slug][0]{
+  title,
+  author,
+  excerpt,
+  "imageUrl": image.asset->url,
+  "slug": slug.current
+}`

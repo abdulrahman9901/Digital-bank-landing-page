@@ -103,29 +103,45 @@
       <div class="articles-section__grid">
         {#each articles as article}
           <article class="article-card">
-            <div class="article-card__media">
-              {#if article.imageUrl}
-                <img
-                  src={article.imageUrl}
-                  alt=""
-                  class="article-card__img"
-                  width="400"
-                  height="250"
-                  loading="lazy"
-                />
-              {/if}
-            </div>
-            <div class="article-card__body">
-              <p class="article-card__author">By {article.author}</p>
-              <h3 class="article-card__title">
-                {#if article.slug}
-                  <a href="/blog/{article.slug}" class="article-card__link">{article.title}</a>
-                {:else}
-                  {article.title}
+            {#if article.slug}
+              <a href="/articles/{article.slug}" class="article-card__link-wrap">
+                <div class="article-card__media">
+                  {#if article.imageUrl}
+                    <img
+                      src={article.imageUrl}
+                      alt=""
+                      class="article-card__img"
+                      width="400"
+                      height="250"
+                      loading="lazy"
+                    />
+                  {/if}
+                </div>
+                <div class="article-card__body">
+                  <p class="article-card__author">By {article.author}</p>
+                  <h3 class="article-card__title">{article.title}</h3>
+                  <p class="article-card__excerpt">{article.excerpt}</p>
+                </div>
+              </a>
+            {:else}
+              <div class="article-card__media">
+                {#if article.imageUrl}
+                  <img
+                    src={article.imageUrl}
+                    alt=""
+                    class="article-card__img"
+                    width="400"
+                    height="250"
+                    loading="lazy"
+                  />
                 {/if}
-              </h3>
-              <p class="article-card__excerpt">{article.excerpt}</p>
-            </div>
+              </div>
+              <div class="article-card__body">
+                <p class="article-card__author">By {article.author}</p>
+                <h3 class="article-card__title">{article.title}</h3>
+                <p class="article-card__excerpt">{article.excerpt}</p>
+              </div>
+            {/if}
           </article>
         {/each}
       </div>
