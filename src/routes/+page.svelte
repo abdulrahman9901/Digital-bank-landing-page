@@ -8,6 +8,22 @@
         subtext: 'Take your financial life online. Your Digitalbank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.',
         ctaText: 'Request Invite'
       }
+
+  const featuresIntro = data.cmsReady && data.featuresIntro
+    ? data.featuresIntro
+    : {
+        title: 'Why choose Digitalbank?',
+        description: 'We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before.'
+      }
+
+  const features = data.cmsReady && data.features?.length
+    ? data.features
+    : [
+        { title: 'Online Banking', description: 'Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.', icon: 'online' },
+        { title: 'Simple Budgeting', description: 'See exactly where your money goes each month. Receive notifications when you\'re close to hitting your limits.', icon: 'budgeting' },
+        { title: 'Fast Onboarding', description: 'We don\'t do branches. Open your account in minutes online and start taking control of your finances right away.', icon: 'onboarding' },
+        { title: 'Open API', description: 'Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.', icon: 'api' }
+      ]
 </script>
 
 <main class="main">
@@ -46,24 +62,31 @@
     </div>
   </section>
 
-  {#if data.cmsReady && (data.featuresIntro || data.features?.length)}
-    <section class="features-section">
-      <div class="container">
-        {#if data.featuresIntro}
-          <h2>{data.featuresIntro.title}</h2>
-          <p>{data.featuresIntro.description}</p>
-        {/if}
-        {#if data.features?.length}
-          {#each data.features as feature}
-            <article>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </article>
-          {/each}
-        {/if}
+  <section class="features-section" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="features-section__intro">
+        <h2 id="features-heading" class="features-section__title">{featuresIntro.title}</h2>
+        <p class="features-section__lead">{featuresIntro.description}</p>
       </div>
-    </section>
-  {/if}
+      <div class="features-section__grid">
+        {#each features as feature}
+          <article class="feature-card">
+            <div class="feature-card__icon-wrap" aria-hidden="true">
+              <img
+                src="/images/icon-{feature.icon}.svg"
+                alt=""
+                class="feature-card__icon"
+                width="72"
+                height="72"
+              />
+            </div>
+            <h3 class="feature-card__title">{feature.title}</h3>
+            <p class="feature-card__text">{feature.description}</p>
+          </article>
+        {/each}
+      </div>
+    </div>
+  </section>
 
   {#if data.cmsReady && data.articles?.length}
     <section class="articles-section">
