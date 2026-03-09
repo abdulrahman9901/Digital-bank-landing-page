@@ -71,6 +71,8 @@ a {
 .site-header {
   background: var(--color-white);
   padding-block: 1.25rem;
+  position: relative;
+  z-index: 10;
 }
 
 .site-header__inner {
@@ -137,6 +139,14 @@ a {
   align-items: center;
   gap: 2rem;
   text-align: center;
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.hero__content-wrap {
+  width: 100%;
 }
 
 .hero__content {
@@ -166,15 +176,29 @@ a {
   position: relative;
   width: 100%;
   max-width: 20rem;
+  min-height: 18rem;
 }
 
 .hero__bg {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 .hero__bg--desktop {
   display: none;
+}
+
+.hero__mockups {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 18rem;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .features-section,
@@ -199,17 +223,29 @@ a {
 
   .hero {
     padding-block: 3rem 5rem;
+    overflow: visible;
   }
 
   .hero__inner {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
-    gap: 3rem;
+    gap: 0;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .hero__content-wrap {
+    flex: 0 1 45%;
+    max-width: 33rem;
+    padding-inline: clamp(1.5rem, 5vw, 4rem);
+    padding-inline-end: 2rem;
+    display: flex;
+    align-items: center;
   }
 
   .hero__content {
-    flex: 0 1 32rem;
+    flex: 1;
   }
 
   .hero__title {
@@ -223,16 +259,37 @@ a {
   }
 
   .hero__media {
-    flex: 0 1 50%;
+    flex: 0 0 50%;
+    min-width: 0;
+    min-height: 36rem;
     max-width: none;
     order: 1;
+    position: relative;
+    background-image: url('/images/bg-intro-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: left -10% bottom -30%;
+    background-size: 180% auto;
   }
 
-  .hero__bg--mobile {
+  .hero__bg {
     display: none;
   }
 
   .hero__bg--desktop {
-    display: block;
+    display: none;
+  }
+
+  .hero__mockups {
+    position: absolute;
+    right: -10%;
+    bottom: -15%;
+    left: auto;
+    transform: none;
+    width: 120%;
+    max-width: 45rem;
+    height: auto;
+    object-fit: contain;
+    object-position: right bottom;
+    z-index: 1;
   }
 }
