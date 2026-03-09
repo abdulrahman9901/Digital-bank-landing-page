@@ -23,7 +23,7 @@
 				<a href="/articles">Blog</a>
 				<a href="/careers">Careers</a>
 			</nav>
-			<button type="button" class="site-header__cta">Request Invite</button>
+			<a href="#request-invite" class="button site-header__cta">Request Invite</a>
 		</div>
 	</header>
 	{@render children()}
