@@ -27,4 +27,36 @@
 		</div>
 	</header>
 	{@render children()}
+	<footer class="site-footer">
+		<div class="container site-footer__inner">
+			<div class="site-footer__brand">
+				<a href="/" class="site-footer__logo" aria-label="Digitalbank home">
+					<img src="/images/logo-light.svg" alt="" width="139" height="20" />
+				</a>
+				<ul class="site-footer__social" aria-label="Social media">
+					<li><a href="#" aria-label="Facebook"><img src="/images/icon-facebook.svg" alt="" width="20" height="20" /></a></li>
+					<li><a href="#" aria-label="YouTube"><img src="/images/icon-youtube.svg" alt="" width="20" height="20" /></a></li>
+					<li><a href="#" aria-label="Twitter"><img src="/images/icon-twitter.svg" alt="" width="20" height="20" /></a></li>
+					<li><a href="#" aria-label="Pinterest"><img src="/images/icon-pinterest.svg" alt="" width="20" height="20" /></a></li>
+					<li><a href="#" aria-label="Instagram"><img src="/images/icon-instagram.svg" alt="" width="20" height="20" /></a></li>
+				</ul>
+			</div>
+			<nav class="site-footer__nav" aria-label="Footer">
+				<ul class="site-footer__links site-footer__links--col1">
+					<li><a href="/about">About Us</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/articles">Blog</a></li>
+				</ul>
+				<ul class="site-footer__links site-footer__links--col2">
+					<li><a href="/careers">Careers</a></li>
+					<li><a href="/support">Support</a></li>
+					<li><a href="/privacy">Privacy Policy</a></li>
+				</ul>
+			</nav>
+			<div class="site-footer__cta-wrap">
+				<a href="#request-invite" class="button site-footer__cta">Request Invite</a>
+				<p class="site-footer__copy">© Digitalbank. All Rights Reserved</p>
+			</div>
+		</div>
+	</footer>
 </div>
