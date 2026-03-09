@@ -13,12 +13,8 @@ export async function load({ params }) {
   const client = getSanityClient(projectId, dataset)
   const article = await client.fetch(articleBySlugQuery, { slug })
 
-  if (!article) {
-    return { article: null, cmsReady: true }
-  }
-
   return {
-    article,
+    article: article ?? null,
     cmsReady: true
   }
 }

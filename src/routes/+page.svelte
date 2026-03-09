@@ -25,14 +25,7 @@
         { title: 'Open API', description: 'Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.', icon: 'api' }
       ]
 
-  const articles = data.cmsReady && data.articles?.length
-    ? data.articles
-    : [
-        { title: 'Receive money in any currency with no fees', author: 'Claire Robinson', excerpt: 'The world is getting smaller and we\'re becoming more mobile. So why should you be forced to only receive money in a single …', imageUrl: '/images/image-currency.jpg', slug: null },
-        { title: 'Treat yourself without worrying about money', author: 'Wilson Hutton', excerpt: 'Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you …', imageUrl: '/images/image-restaurant.jpg', slug: null },
-        { title: 'Take your Digitalbank card wherever you go', author: 'Wilson Hutton', excerpt: 'We want you to enjoy your travels. This is why we don\'t charge any fees on purchases while you\'re abroad. We\'ll even show you …', imageUrl: '/images/image-plane.jpg', slug: null },
-        { title: 'Our invite-only Beta accounts are now live!', author: 'Claire Robinson', excerpt: 'After a lot of hard work by the whole team, we\'re excited to launch our closed beta. It\'s easy to request an invite through the site …', imageUrl: '/images/image-confetti.jpg', slug: null }
-      ]
+  const articles = data.articles ?? []
 </script>
 
 <main class="main">

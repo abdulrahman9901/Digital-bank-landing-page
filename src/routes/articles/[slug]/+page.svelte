@@ -2,11 +2,15 @@
   let { data } = $props()
 </script>
 
-{#if data.article}
-  <svelte:head>
+<svelte:head>
+  {#if data.article}
     <title>{data.article.title} — Digitalbank</title>
-  </svelte:head>
+  {:else}
+    <title>Article not found — Digitalbank</title>
+  {/if}
+</svelte:head>
 
+{#if data.article}
   <main class="main">
     <article class="article-detail container">
       <header class="article-detail__header">
@@ -33,10 +37,6 @@
     </article>
   </main>
 {:else}
-  <svelte:head>
-    <title>Article not found — Digitalbank</title>
-  </svelte:head>
-
   <main class="main">
     <div class="container empty-state">
       <h1>Article not found</h1>
