@@ -17,11 +17,11 @@
 				<img src="/images/logo-dark.svg" alt="" width="139" height="20" />
 			</a>
 			<nav class="site-header__nav" aria-label="Main">
-				<a href="/#home">Home</a>
-				<a href="/#about">About</a>
-				<a href="/#contact">Contact</a>
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+				<a href="/contact">Contact</a>
 				<a href="/articles">Blog</a>
-				<a href="/#careers">Careers</a>
+				<a href="/careers">Careers</a>
 			</nav>
 			<button type="button" class="site-header__cta">Request Invite</button>
 		</div>
