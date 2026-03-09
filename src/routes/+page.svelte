@@ -24,6 +24,15 @@
         { title: 'Fast Onboarding', description: 'We don\'t do branches. Open your account in minutes online and start taking control of your finances right away.', icon: 'onboarding' },
         { title: 'Open API', description: 'Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.', icon: 'api' }
       ]
+
+  const articles = data.cmsReady && data.articles?.length
+    ? data.articles
+    : [
+        { title: 'Receive money in any currency with no fees', author: 'Claire Robinson', excerpt: 'The world is getting smaller and we\'re becoming more mobile. So why should you be forced to only receive money in a single …', imageUrl: '/images/image-currency.jpg', slug: null },
+        { title: 'Treat yourself without worrying about money', author: 'Wilson Hutton', excerpt: 'Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you …', imageUrl: '/images/image-restaurant.jpg', slug: null },
+        { title: 'Take your Digitalbank card wherever you go', author: 'Wilson Hutton', excerpt: 'We want you to enjoy your travels. This is why we don\'t charge any fees on purchases while you\'re abroad. We\'ll even show you …', imageUrl: '/images/image-plane.jpg', slug: null },
+        { title: 'Our invite-only Beta accounts are now live!', author: 'Claire Robinson', excerpt: 'After a lot of hard work by the whole team, we\'re excited to launch our closed beta. It\'s easy to request an invite through the site …', imageUrl: '/images/image-confetti.jpg', slug: null }
+      ]
 </script>
 
 <main class="main">
@@ -88,20 +97,40 @@
     </div>
   </section>
 
-  {#if data.cmsReady && data.articles?.length}
-    <section class="articles-section">
-      <div class="container">
-        <h2>Latest Articles</h2>
-        {#each data.articles as article}
-          <article>
-            <h3>{article.title}</h3>
-            <p>By {article.author}</p>
-            <p>{article.excerpt}</p>
+  <section class="articles-section" aria-labelledby="articles-heading">
+    <div class="container">
+      <h2 id="articles-heading" class="articles-section__title">Latest Articles</h2>
+      <div class="articles-section__grid">
+        {#each articles as article}
+          <article class="article-card">
+            <div class="article-card__media">
+              {#if article.imageUrl}
+                <img
+                  src={article.imageUrl}
+                  alt=""
+                  class="article-card__img"
+                  width="400"
+                  height="250"
+                  loading="lazy"
+                />
+              {/if}
+            </div>
+            <div class="article-card__body">
+              <p class="article-card__author">By {article.author}</p>
+              <h3 class="article-card__title">
+                {#if article.slug}
+                  <a href="/blog/{article.slug}" class="article-card__link">{article.title}</a>
+                {:else}
+                  {article.title}
+                {/if}
+              </h3>
+              <p class="article-card__excerpt">{article.excerpt}</p>
+            </div>
           </article>
         {/each}
       </div>
-    </section>
-  {/if}
+    </div>
+  </section>
 
   {#if !data.cmsReady}
     <p class="cms-hint">Connect Sanity CMS: Add PUBLIC_SANITY_PROJECT_ID to .env and create content in the studio.</p>
