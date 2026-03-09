@@ -5,7 +5,9 @@ export default defineCliConfig({
     projectId: '5o9aqg70',
     dataset: 'production'
   },
+  studioHost: 'digitalbank',
   deployment: {
+    appId: 'tupuvc3scwk6b1gsso92cw1u',
     /**
      * Enable auto-updates for studios.
      * Learn more at https://www.sanity.io/docs/studio/latest-version-of-sanity#k47faf43faf56
