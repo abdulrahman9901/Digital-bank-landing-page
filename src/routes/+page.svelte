@@ -12,11 +12,13 @@
 
 <main class="main">
   <section class="hero" aria-labelledby="hero-heading">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <h1 id="hero-heading" class="hero__title">{hero.headline}</h1>
-        <p class="hero__text">{hero.subtext}</p>
-        <a href="#request-invite" class="hero__cta button">{hero.ctaText}</a>
+    <div class="hero__inner">
+      <div class="hero__content-wrap">
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">{hero.headline}</h1>
+          <p class="hero__text">{hero.subtext}</p>
+          <a href="#request-invite" class="hero__cta button">{hero.ctaText}</a>
+        </div>
       </div>
       <div class="hero__media" aria-hidden="true">
         <img
@@ -32,6 +34,13 @@
           class="hero__bg hero__bg--desktop"
           width="1200"
           height="900"
+        />
+        <img
+          src="/images/image-mockups.png"
+          alt=""
+          class="hero__mockups"
+          width="768"
+          height="939"
         />
       </div>
     </div>
